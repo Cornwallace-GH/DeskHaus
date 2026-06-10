@@ -1,0 +1,11 @@
+title: DeskHaus
+description: Premium home office gear. Curated for the serious setup.
+baseurl: "/DeskHaus"
+url: "https://cornwallace-gh.github.io"
+theme: null
+plugins: []
+exclude:
+  - _shopify_reference/
+  - README.md
+  - Gemfile
+  - Gemfile.lock

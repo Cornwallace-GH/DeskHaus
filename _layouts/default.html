@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    Free shipping on orders over $75 &nbsp;·&nbsp; 30-day returns &nbsp;·&nbsp; Secure checkout
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <a href="{{ '/' | relative_url }}" class="logo">
+          <span class="serif">DESK</span><span class="logo-light">HAUS</span>
+        </a>
+        <div class="nav-links">
+          <a href="#shop" class="nav-link">Shop</a>
+          <a href="#bundles" class="nav-link">Bundles</a>
+          <a href="#about" class="nav-link">About</a>
+        </div>
+      </div>
+      <button class="cart-btn" onclick="toggleCart()">
+        Cart <span class="cart-count" id="cart-count" style="display:none">0</span>
+      </button>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+  <div class="drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h2 class="serif">Your Cart</h2>
+      <button class="btn-icon" onclick="closeAll()">✕</button>
+    </div>
+    <div class="ship-bar">
+      <div class="progress-bar"><div class="progress-fill" id="ship-progress"></div></div>
+      <p class="ship-label" id="ship-label">Add $75.00 more for free shipping</p>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-totals">
+        <div class="cart-row" id="savings-row" style="display:none">
+          <span>You save</span><span class="green" id="savings-amt"></span>
+        </div>
+        <div class="cart-row muted"><span>Shipping</span><span id="ship-cost">Calculated at checkout</span></div>
+        <div class="cart-row total"><span>Total</span><span id="cart-total-amt">$0.00</span></div>
+      </div>
+      <button class="btn btn-dark w-full" onclick="openCheckout()">Proceed to Checkout →</button>
+      <p class="secure-note">Secure checkout · SSL encrypted · 30-day returns</p>
+    </div>
+  </div>
+
+  <!-- CHECKOUT DRAWER -->
+  <div class="drawer" id="checkout-drawer">
+    <div class="drawer-header">
+      <h2 class="serif">Checkout</h2>
+      <button class="btn-icon" onclick="closeAll()">✕</button>
+    </div>
+    <div class="steps" id="checkout-steps"></div>
+    <div id="checkout-body"></div>
+    <div class="checkout-nav" id="checkout-nav"></div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="product-modal" onclick="closeModal(event)">
+    <div class="modal-box" id="modal-box"></div>
+  </div>
+
+  <!-- ORDER SUCCESS -->
+  <div class="modal" id="success-modal">
+    <div class="modal-box success-box">
+      <div class="success-check">✓</div>
+      <h2 class="serif">Order Placed</h2>
+      <p>Thanks for your order. You'll receive a confirmation email shortly.</p>
+      <p class="muted small">Estimated delivery: 5–7 business days</p>
+      <button class="btn btn-dark w-full" onclick="closeSuccess()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-wrap" id="toasts"></div>
+
+  <script src="{{ '/assets/js/store.js' | relative_url }}"></script>
+</body>
+</html>

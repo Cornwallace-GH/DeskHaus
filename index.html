@@ -1,14 +1,278 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="DeskHaus — Premium home office gear. Curated for the serious setup." />
-    <title>DeskHaus — Premium Home Office Gear</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+---
+layout: default
+title: DeskHaus — Premium Home Office Gear
+description: Eight hand-picked home office products. No filler.
+---
+
+<!-- Inject product data as JSON for JS -->
+<script>
+window.PRODUCTS_DATA = [
+  {% for p in site.data.products %}
+  {
+    id: {{ p.id }},
+    name: {{ p.name | jsonify }},
+    tagline: {{ p.tagline | jsonify }},
+    price: {{ p.price }},
+    compare_at: {{ p.compare_at | default: "null" }},
+    category: {{ p.category | jsonify }},
+    badge: {{ p.badge | jsonify | default: "null" }},
+    inventory: {{ p.inventory }},
+    sku: {{ p.sku | jsonify }},
+    margin: {{ p.margin }},
+    supplier: {{ p.supplier | jsonify }},
+    supplier_sku: {{ p.supplier_sku | jsonify }},
+    variants: {{ p.variants | jsonify }},
+    img: {{ p.img | jsonify }},
+    imgs: [{{ p.img | jsonify }}],
+    description: {{ p.description | jsonify }},
+    specs: {{ p.specs | jsonify }},
+    reviews: {{ p.reviews | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+];
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Premium Home Office Gear</div>
+        <h1 class="hero-title serif">Your desk should work as hard as you do.</h1>
+        <p class="hero-sub">Eight hand-picked products. No fillers, no noise — just the gear that makes a real workspace.</p>
+        <div class="hero-ctas">
+          <a href="#shop" class="btn btn-dark" style="background:#fff;color:#1C1C1C;">Shop the Collection</a>
+          <a href="#bundles" class="btn btn-ghost" style="border-color:#444;color:#888;">View Bundles</a>
+        </div>
+      </div>
+      <div class="hero-images">
+        {% for p in site.data.products limit:4 %}
+        <div class="hero-img-wrap" onclick="openProductModal({{ p.id }})">
+          <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-item">🚚 Free shipping over $75</span>
+    <span class="trust-item">↩ 30-day returns</span>
+    <span class="trust-item">🔒 Secure SSL checkout</span>
+    <span class="trust-item">📦 Ships in 1–2 business days</span>
+  </div>
+</div>
+
+<!-- SHOP -->
+<section class="section" id="shop">
+  <div class="container">
+    <div class="shop-header">
+      <div>
+        <div class="tag" style="margin-bottom:8px">The Collection</div>
+        <h2 class="serif" style="font-size:38px">8 products. No filler.</h2>
+      </div>
+      <div class="shop-controls">
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input class="search-input" id="search-input" type="text" placeholder="Search products..." />
+        </div>
+        <select class="sort-select" id="sort-select">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="margin">Best Margin</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Category filters -->
+    <div class="cat-filters">
+      <button class="cat-btn active" data-cat="All">All</button>
+      {% assign categories = site.data.products | map: "category" | uniq %}
+      {% for cat in categories %}
+      <button class="cat-btn" data-cat="{{ cat }}">{{ cat }}</button>
+      {% endfor %}
+    </div>
+
+    <!-- Products Grid (populated by JS) -->
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section class="section bundles-section" id="bundles">
+  <div class="container">
+    <div class="tag" style="margin-bottom:8px">Curated Bundles</div>
+    <h2 class="serif" style="font-size:38px;margin-bottom:40px">Built to go together.</h2>
+    <div class="bundles-grid">
+      <!-- Bundle 1 -->
+      <div class="bundle-card">
+        <div class="bundle-img-wrap">
+          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80" alt="The Clean Setup" />
+          <div class="bundle-overlay"></div>
+          <div class="bundle-text">
+            <h3 class="serif">The Clean Setup</h3>
+            <p>Monitor arm + desk mat + cable clips.</p>
+          </div>
+          <span class="pill pill-gold bundle-badge">Save $18</span>
+        </div>
+        <div class="bundle-body">
+          <div class="bundle-items">
+            {% for p in site.data.products %}{% if p.id == 1 or p.id == 2 or p.id == 4 %}
+            <div class="bundle-item-row"><span>{{ p.name }}</span><span>${{ p.price }}</span></div>
+            {% endif %}{% endfor %}
+          </div>
+          <div class="bundle-footer">
+            <div class="bundle-price">
+              <span class="bundle-price-main">$109.97</span>
+              <span class="bundle-price-compare">$127.97</span>
+            </div>
+            <button class="btn btn-dark btn-sm" onclick="addBundle('b1')">Add Bundle</button>
+          </div>
+        </div>
+      </div>
+      <!-- Bundle 2 -->
+      <div class="bundle-card">
+        <div class="bundle-img-wrap">
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80" alt="The Laptop Station" />
+          <div class="bundle-overlay"></div>
+          <div class="bundle-text">
+            <h3 class="serif">The Laptop Station</h3>
+            <p>Vertical stand + riser + cable tray.</p>
+          </div>
+          <span class="pill pill-gold bundle-badge">Save $14</span>
+        </div>
+        <div class="bundle-body">
+          <div class="bundle-items">
+            {% for p in site.data.products %}{% if p.id == 3 or p.id == 7 or p.id == 6 %}
+            <div class="bundle-item-row"><span>{{ p.name }}</span><span>${{ p.price }}</span></div>
+            {% endif %}{% endfor %}
+          </div>
+          <div class="bundle-footer">
+            <div class="bundle-price">
+              <span class="bundle-price-main">$110.97</span>
+              <span class="bundle-price-compare">$124.97</span>
+            </div>
+            <button class="btn btn-dark btn-sm" onclick="addBundle('b2')">Add Bundle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS / SOURCING -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="tag" style="color:#555;margin-bottom:8px">By the Numbers</div>
+    <h2 class="serif" style="font-size:36px;margin-bottom:48px">The business case.</h2>
+    <div class="stats-grid">
+      <div><div class="stat-num serif">74–83%</div><div class="tag" style="color:#555">Gross margin range</div></div>
+      <div><div class="stat-num serif">8 SKUs</div><div class="tag" style="color:#555">Tight, curated catalog</div></div>
+      <div><div class="stat-num serif">$22–$70</div><div class="tag" style="color:#555">Retail price per unit</div></div>
+      <div><div class="stat-num serif">$4–18</div><div class="tag" style="color:#555">Average supplier cost</div></div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="sourcing-table">
+        <thead>
+          <tr>
+            <th>Product</th><th>Supplier</th><th>SKU</th><th>Cost</th><th>Price</th><th>Margin</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in site.data.products %}
+          <tr>
+            <td><strong>{{ p.name }}</strong></td>
+            <td style="color:#666">{{ p.supplier }}</td>
+            <td class="mono" style="color:#555">{{ p.supplier_sku }}</td>
+            <td style="color:#888">${{ p.cost | default: "—" }}</td>
+            <td>${{ p.price }}</td>
+            <td><span class="margin-pill">{{ p.margin }}%</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="tag" style="margin-bottom:12px">About DeskHaus</div>
+        <h2 class="serif" style="font-size:36px;margin-bottom:20px">We believe your workspace should earn its keep.</h2>
+        <p>DeskHaus was built around one idea: most desk gear is either ugly, overpriced, or both. We cut the catalog down to 8 things that actually work, sourced from vetted suppliers, priced for the quality they deliver.</p>
+        <p>Every product ships within 1–2 business days. Every order comes with a 30-day return guarantee. No questions, no hassle.</p>
+      </div>
+      <div class="about-images">
+        {% for p in site.data.products offset:4 limit:4 %}
+        <div><img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" /></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section class="email-section">
+  <div class="email-inner">
+    <div class="tag" style="color:#555;margin-bottom:10px">Stay in the loop</div>
+    <h2 class="serif">Get 10% off your first order.</h2>
+    <p>New drops, restocks, and deals. No spam.</p>
+    <div id="email-form-wrap">
+      <div class="email-form">
+        <input class="email-input" id="email-signup" type="email" placeholder="Your email address"
+          onkeydown="if(event.key==='Enter')subscribeEmail()" />
+        <button class="btn btn-dark" style="background:#fff;color:#1C1C1C;white-space:nowrap" onclick="subscribeEmail()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="serif" style="font-size:20px">DESK</span><span style="font-size:20px;font-weight:300;letter-spacing:0.14em">HAUS</span>
+        <p>Premium home office accessories. Curated for people who take their workspace seriously.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Shop</div>
+        <a href="#shop">All Products</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#shop">New Arrivals</a>
+        <a href="#shop">Best Sellers</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <a href="#">FAQ</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#about">About</a>
+        <a href="#">Supplier Info</a>
+        <a href="#">Affiliate Program</a>
+        <a href="#">Press</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom">
+      <p>© 2026 DeskHaus · All rights reserved</p>
+      <div class="footer-legal">
+        <span>Privacy Policy</span>
+        <span>Terms of Service</span>
+        <span>Sitemap</span>
+      </div>
+    </div>
+  </div>
+</footer>

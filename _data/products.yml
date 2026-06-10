@@ -1,0 +1,215 @@
+- id: 1
+  name: "Aluminum Monitor Arm"
+  tagline: "Full motion. Zero clutter."
+  price: 59.99
+  compare_at: 89.99
+  category: "Mounting"
+  badge: "Best Seller"
+  inventory: 47
+  sku: "DH-MON-ARM-01"
+  margin: 77
+  supplier: "CJdropshipping"
+  supplier_sku: "CJ-MON-ARM-01"
+  variants: ["Silver", "Matte Black"]
+  img: "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80"
+  description: "Single arm mount compatible with 13–32 inch monitors up to 17.6 lbs. Gas spring lift provides smooth adjustment. Full 360° rotation, tilt ±45°, and swivel. Integrated cable channel."
+  specs:
+    - "Supports 13–32\" screens"
+    - "Gas spring arm, up to 17.6 lbs"
+    - "VESA 75×75 / 100×100"
+    - "Cable management channel"
+  reviews:
+    - author: "Marcus T."
+      rating: 5
+      date: "May 2026"
+      body: "Transformed my desk completely. Easy install, gas spring feels premium."
+    - author: "Jenna R."
+      rating: 4
+      date: "Apr 2026"
+      body: "Rock solid. Wish the cable clips were a bit bigger but otherwise perfect."
+
+- id: 2
+  name: "Wide Desk Mat – Slate"
+  tagline: "The foundation of every clean setup."
+  price: 44.99
+  compare_at: 59.99
+  category: "Desk Accessories"
+  badge: "Top Rated"
+  inventory: 120
+  sku: "DH-DESKMAT-SL"
+  margin: 82
+  supplier: "AliExpress"
+  supplier_sku: "AE-DESKMAT-SLATE"
+  variants: ["Slate", "Midnight", "Sand"]
+  img: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80"
+  description: "900×400mm extended mouse pad with stitched anti-fray edges and non-slip rubber base. Water-resistant micro-texture surface."
+  specs:
+    - "900 × 400 × 4mm"
+    - "Stitched anti-fray edges"
+    - "Non-slip rubber base"
+    - "Water-resistant surface"
+  reviews:
+    - author: "Priya M."
+      rating: 5
+      date: "Jun 2026"
+      body: "Massive, smooth, and looks incredible. Best desk purchase I've made."
+    - author: "Tom S."
+      rating: 5
+      date: "May 2026"
+      body: "Fits my whole keyboard, mouse, and a coffee cup. Actually huge."
+
+- id: 3
+  name: "Vertical Laptop Stand"
+  tagline: "Dock it. Free your desk."
+  price: 39.99
+  compare_at:
+  category: "Stands"
+  badge:
+  inventory: 83
+  sku: "DH-LAPSTAND-V1"
+  margin: 78
+  supplier: "CJdropshipping"
+  supplier_sku: "CJ-LAPSTAND-V1"
+  variants: ["Silver", "Space Gray"]
+  img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
+  description: "Adjustable aluminum vertical stand fits MacBooks and laptops 11–17 inches. Width adjusts 11–16mm. Anti-scratch silicone pads on all contact points."
+  specs:
+    - "Fits 11–17\" laptops"
+    - "Width 11–16mm adjustable"
+    - "Aluminum alloy"
+    - "Anti-scratch silicone pads"
+  reviews:
+    - author: "Aisha K."
+      rating: 5
+      date: "May 2026"
+      body: "Super stable, premium feel. My MacBook Pro fits perfectly."
+
+- id: 4
+  name: "Magnetic Cable Clips – 6 Pack"
+  tagline: "Kill the cable chaos."
+  price: 22.99
+  compare_at: 29.99
+  category: "Cable Management"
+  badge: "High Margin"
+  inventory: 215
+  sku: "DH-MAGCLIP-6PK"
+  margin: 83
+  supplier: "AliExpress"
+  supplier_sku: "AE-MAGCLIP-6PK"
+  variants: ["Black", "White"]
+  img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+  description: "Neodymium magnetic base routes USB-C, Lightning, and standard cables cleanly. No adhesive residue. Pack of 6."
+  specs:
+    - "Neodymium magnet base"
+    - "Fits cables up to 8mm"
+    - "Pack of 6 clips"
+    - "No adhesive / no drilling"
+  reviews:
+    - author: "Carlos B."
+      rating: 5
+      date: "Jun 2026"
+      body: "Tiny product, massive impact on how clean my desk looks."
+
+- id: 5
+  name: "LED Desk Lamp with Wireless Charger"
+  tagline: "Light. Power. One cord."
+  price: 69.99
+  compare_at: 99.99
+  category: "Lighting"
+  badge: "New"
+  inventory: 34
+  sku: "DH-LEDLAMP-WC"
+  margin: 74
+  supplier: "CJdropshipping"
+  supplier_sku: "CJ-LEDLAMP-WC"
+  variants: ["Black", "White"]
+  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+  description: "10W wireless charging base with 5 color temps and 10 brightness levels. Touch control with memory function. USB-A port on base."
+  specs:
+    - "10W Qi wireless charging"
+    - "5 color temps (2700–6500K)"
+    - "10 brightness levels"
+    - "USB-A port on base"
+  reviews:
+    - author: "Samira H."
+      rating: 5
+      date: "Jun 2026"
+      body: "Wireless charging works great and the light is warm and adjustable. Love it."
+
+- id: 6
+  name: "Under-Desk Cable Tray"
+  tagline: "Out of sight, out of mind."
+  price: 34.99
+  compare_at:
+  category: "Cable Management"
+  badge:
+  inventory: 67
+  sku: "DH-CABLETRAY-17"
+  margin: 80
+  supplier: "AliExpress"
+  supplier_sku: "AE-CABLETRAY-17"
+  variants: ["Black", "White"]
+  img: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&q=80"
+  description: "Steel mesh cable raceway mounts under any desk without drilling. 17 inches wide, holds a full power strip. 10-minute install."
+  specs:
+    - "17\" width"
+    - "No-drill mounting"
+    - "Steel mesh construction"
+    - "Holds up to 11 lbs"
+  reviews:
+    - author: "Frank D."
+      rating: 5
+      date: "Apr 2026"
+      body: "10 minute install and my desk looks completely different. Game changer."
+
+- id: 7
+  name: "Ergonomic Laptop Riser"
+  tagline: "Screen up. Neck saved."
+  price: 49.99
+  compare_at: 64.99
+  category: "Stands"
+  badge:
+  inventory: 59
+  sku: "DH-LAPRISE-AL"
+  margin: 78
+  supplier: "CJdropshipping"
+  supplier_sku: "CJ-LAPRISE-AL"
+  variants: ["Silver", "Space Gray"]
+  img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
+  description: "Hollow aluminum riser with 6 height settings from 2 to 6.5 inches. Folds flat for travel. Improves airflow and screen positioning."
+  specs:
+    - "6 height settings (2\"–6.5\")"
+    - "Hollow aluminum alloy"
+    - "Folds flat for travel"
+    - "Supports up to 22 lbs"
+  reviews:
+    - author: "Jordan M."
+      rating: 5
+      date: "May 2026"
+      body: "Neck pain gone after a week of using this. Solid and stable."
+
+- id: 8
+  name: "Minimalist Desk Organizer"
+  tagline: "Everything in reach. Nothing in the way."
+  price: 48.99
+  compare_at:
+  category: "Desk Accessories"
+  badge:
+  inventory: 41
+  sku: "DH-DESKORG-BAM"
+  margin: 80
+  supplier: "AliExpress"
+  supplier_sku: "AE-DESKORG-BAM"
+  variants: ["Natural Bamboo", "Dark Walnut"]
+  img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80"
+  description: "Bamboo and brushed aluminum organizer with 4 compartments, pen holder, and phone slot. Weighted cork base."
+  specs:
+    - "Bamboo + brushed aluminum"
+    - "4 compartments + pen holder"
+    - "Phone/tablet slot"
+    - "Weighted cork base"
+  reviews:
+    - author: "Mia C."
+      rating: 5
+      date: "Jun 2026"
+      body: "Gorgeous. The bamboo and aluminum combo looks so premium in person."
