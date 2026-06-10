@@ -180,15 +180,15 @@ window.PRODUCTS_DATA = [
       <table class="sourcing-table">
         <thead>
           <tr>
-            <th>Product</th><th>Supplier</th><th>SKU</th><th>Cost</th><th>Price</th><th>Margin</th>
+            <th>Product</th><th class="col-supplier">Supplier</th><th class="col-sku">SKU</th><th>Cost</th><th>Price</th><th>Margin</th>
           </tr>
         </thead>
         <tbody>
           {% for p in site.data.products %}
           <tr>
             <td><strong>{{ p.name }}</strong></td>
-            <td style="color:#666">{{ p.supplier }}</td>
-            <td class="mono" style="color:#555">{{ p.supplier_sku }}</td>
+            <td class="col-supplier" style="color:#666">{{ p.supplier }}</td>
+            <td class="col-sku mono" style="color:#555">{{ p.supplier_sku }}</td>
             <td style="color:#888">${{ p.cost | default: "—" }}</td>
             <td>${{ p.price }}</td>
             <td><span class="margin-pill">{{ p.margin }}%</span></td>
