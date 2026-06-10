@@ -1,0 +1,146 @@
+export const PRODUCTS = [
+  {
+    id: 1, name: "Aluminum Monitor Arm", tagline: "Full motion. Zero clutter.",
+    cost: 14, price: 59.99, compareAt: 89.99, category: "Mounting", badge: "Best Seller",
+    inventory: 47, sku: "DH-MON-ARM-01", weight: "2.1 lbs",
+    description: "Single arm mount compatible with 13–32\" monitors up to 17.6 lbs. Gas spring lift provides smooth, effortless adjustment. Full 360° rotation, tilt ±45°, and swivel. Integrated cable channel keeps cords invisible. Clamp fits desks up to 2.4\" thick.",
+    specs: ["Supports 13–32\" screens", "Gas spring arm, up to 17.6 lbs", "VESA 75×75 / 100×100", "Cable management channel", "Clamp fits desks ≤2.4\""],
+    supplier: "CJdropshipping", supplierSKU: "CJ-MON-ARM-01", margin: 77,
+    variants: [{ label: "Silver" }, { label: "Matte Black" }],
+    reviews: [
+      { author: "Marcus T.", rating: 5, date: "May 2026", body: "Transformed my desk completely. Easy install, gas spring feels premium." },
+      { author: "Jenna R.", rating: 4, date: "Apr 2026", body: "Rock solid. Wish the cable clips were a bit bigger but otherwise perfect." },
+      { author: "Derek L.", rating: 5, date: "Mar 2026", body: "Worth every cent. My 27\" monitor is perfectly positioned now." },
+    ],
+    img: "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80","https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80"],
+  },
+  {
+    id: 2, name: "Wide Desk Mat – Slate", tagline: "The foundation of every clean setup.",
+    cost: 8, price: 44.99, compareAt: 59.99, category: "Desk Accessories", badge: "Top Rated",
+    inventory: 120, sku: "DH-DESKMAT-SL", weight: "1.4 lbs",
+    description: "900×400mm extended mouse pad with precision-stitched anti-fray edges and a non-slip natural rubber base. Water-resistant micro-texture surface handles coffee spills without flinching.",
+    specs: ["900 × 400 × 4mm", "Stitched anti-fray edges", "Non-slip rubber base", "Water-resistant surface", "Available: Slate, Midnight, Sand"],
+    supplier: "AliExpress", supplierSKU: "AE-DESKMAT-SLATE", margin: 82,
+    variants: [{ label: "Slate" }, { label: "Midnight" }, { label: "Sand" }],
+    reviews: [
+      { author: "Priya M.", rating: 5, date: "Jun 2026", body: "Massive, smooth, and looks incredible. Best desk purchase I've made." },
+      { author: "Tom S.", rating: 5, date: "May 2026", body: "Fits my whole keyboard, mouse, and a coffee cup. Actually huge." },
+    ],
+    img: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80","https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80"],
+  },
+  {
+    id: 3, name: "Vertical Laptop Stand", tagline: "Dock it. Free your desk.",
+    cost: 9, price: 39.99, compareAt: null, category: "Stands", badge: null,
+    inventory: 83, sku: "DH-LAPSTAND-V1", weight: "0.9 lbs",
+    description: "Adjustable aluminum vertical stand fits MacBooks and laptops 11–17\". Width adjusts 11–16mm via a single thumbscrew. Anti-scratch silicone pads on all contact points.",
+    specs: ["Fits 11–17\" laptops", "Width 11–16mm adjustable", "Aluminum alloy", "Anti-scratch silicone pads", "Foldable for travel"],
+    supplier: "CJdropshipping", supplierSKU: "CJ-LAPSTAND-V1", margin: 78,
+    variants: [{ label: "Silver" }, { label: "Space Gray" }],
+    reviews: [
+      { author: "Aisha K.", rating: 5, date: "May 2026", body: "Super stable, premium feel. My MacBook Pro fits perfectly." },
+      { author: "Ryan C.", rating: 4, date: "Apr 2026", body: "Does exactly what it says. Simple and well-made." },
+    ],
+    img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"],
+  },
+  {
+    id: 4, name: "Magnetic Cable Clips – 6 Pack", tagline: "Kill the cable chaos.",
+    cost: 4, price: 22.99, compareAt: 29.99, category: "Cable Management", badge: "High Margin",
+    inventory: 215, sku: "DH-MAGCLIP-6PK", weight: "0.2 lbs",
+    description: "Strong neodymium magnetic base adheres to any steel surface. Routes USB-C, Lightning, and standard cables along desk edges cleanly. No adhesive residue, no drilling. Pack of 6.",
+    specs: ["Neodymium magnet base", "Fits cables up to 8mm diameter", "Pack of 6 clips", "No adhesive / no drilling", "Works on any steel surface"],
+    supplier: "AliExpress", supplierSKU: "AE-MAGCLIP-6PK", margin: 83,
+    variants: [{ label: "Black" }, { label: "White" }],
+    reviews: [
+      { author: "Carlos B.", rating: 5, date: "Jun 2026", body: "Tiny product, massive impact on how clean my desk looks." },
+      { author: "Nina W.", rating: 4, date: "May 2026", body: "Great idea. Holds perfectly, no residue at all." },
+    ],
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"],
+  },
+  {
+    id: 5, name: "LED Desk Lamp with Wireless Charger", tagline: "Light. Power. One cord.",
+    cost: 18, price: 69.99, compareAt: 99.99, category: "Lighting", badge: "New",
+    inventory: 34, sku: "DH-LEDLAMP-WC", weight: "1.6 lbs",
+    description: "10W wireless charging base (Qi-compatible) with 5 color temperatures and 10 brightness levels. Touch-sensitive control panel with memory function. USB-A port on base. Flexible gooseneck arm.",
+    specs: ["10W Qi wireless charging", "5 color temps (2700–6500K)", "10 brightness levels", "USB-A port on base", "Touch + memory control"],
+    supplier: "CJdropshipping", supplierSKU: "CJ-LEDLAMP-WC", margin: 74,
+    variants: [{ label: "Black" }, { label: "White" }],
+    reviews: [
+      { author: "Samira H.", rating: 5, date: "Jun 2026", body: "The wireless charging pad works great and the light is warm and adjustable. Love it." },
+      { author: "Brett O.", rating: 5, date: "May 2026", body: "Replaced three things on my desk with one. Couldn't be happier." },
+    ],
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"],
+  },
+  {
+    id: 6, name: "Under-Desk Cable Tray", tagline: "Out of sight, out of mind.",
+    cost: 7, price: 34.99, compareAt: null, category: "Cable Management", badge: null,
+    inventory: 67, sku: "DH-CABLETRAY-17", weight: "1.1 lbs",
+    description: "Steel mesh cable raceway mounts under any desk without drilling. 17\" wide, holds a full power strip with cables. Removes the rat's nest under your desk in under 10 minutes.",
+    specs: ["17\" width", "No-drill adhesive mounting", "Steel mesh construction", "Holds up to 11 lbs", "Optional screw mount included"],
+    supplier: "AliExpress", supplierSKU: "AE-CABLETRAY-17", margin: 80,
+    variants: [{ label: "Black" }, { label: "White" }],
+    reviews: [
+      { author: "Frank D.", rating: 5, date: "Apr 2026", body: "10 minute install and my desk looks completely different. Game changer." },
+      { author: "Grace P.", rating: 4, date: "Mar 2026", body: "Solid product. Holds my whole power strip easily." },
+    ],
+    img: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&q=80"],
+  },
+  {
+    id: 7, name: "Ergonomic Laptop Riser", tagline: "Screen up. Neck saved.",
+    cost: 11, price: 49.99, compareAt: 64.99, category: "Stands", badge: null,
+    inventory: 59, sku: "DH-LAPRISE-AL", weight: "1.3 lbs",
+    description: "Hollow aluminum riser with 6 height settings from 2\" to 6.5\". Hollow design improves airflow. Folds completely flat — fits in most laptop bags.",
+    specs: ["6 height settings (2\"–6.5\")", "Hollow aluminum alloy", "Folds flat for travel", "Supports up to 22 lbs", "Non-slip silicone feet"],
+    supplier: "CJdropshipping", supplierSKU: "CJ-LAPRISE-AL", margin: 78,
+    variants: [{ label: "Silver" }, { label: "Space Gray" }],
+    reviews: [
+      { author: "Jordan M.", rating: 5, date: "May 2026", body: "Neck pain gone after a week of using this. Solid and stable." },
+      { author: "Lisa T.", rating: 5, date: "Apr 2026", body: "Beautiful aluminum finish and folds perfectly into my bag." },
+    ],
+    img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"],
+  },
+  {
+    id: 8, name: "Minimalist Desk Organizer", tagline: "Everything in reach. Nothing in the way.",
+    cost: 10, price: 48.99, compareAt: null, category: "Desk Accessories", badge: null,
+    inventory: 41, sku: "DH-DESKORG-BAM", weight: "1.8 lbs",
+    description: "Bamboo and brushed aluminum hybrid organizer with 4 compartments, dedicated pen holder, and angled phone/tablet slot. Weighted cork base prevents movement.",
+    specs: ["Bamboo + brushed aluminum", "4 compartments + pen holder", "Phone/tablet slot (angled)", "Weighted cork base", "Dimensions: 10\" × 4\" × 4\""],
+    supplier: "AliExpress", supplierSKU: "AE-DESKORG-BAM", margin: 80,
+    variants: [{ label: "Natural Bamboo" }, { label: "Dark Walnut" }],
+    reviews: [
+      { author: "Mia C.", rating: 5, date: "Jun 2026", body: "It's gorgeous. The bamboo and aluminum combo looks so premium in person." },
+      { author: "Sam J.", rating: 4, date: "May 2026", body: "Perfect size, very sturdy. My desk finally looks organized." },
+    ],
+    img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80",
+    imgs: ["https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80"],
+  },
+];
+
+export const BUNDLES = [
+  {
+    id: "b1", name: "The Clean Setup", tagline: "Monitor arm + desk mat + cable clips.",
+    productIds: [1, 2, 4], savings: 18,
+    img: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80",
+  },
+  {
+    id: "b2", name: "The Laptop Station", tagline: "Vertical stand + riser + cable tray.",
+    productIds: [3, 7, 6], savings: 14,
+    img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+  },
+];
+
+export const CATEGORIES = ["All", ...Array.from(new Set(PRODUCTS.map(p => p.category)))];
+
+export const SORT_OPTIONS = [
+  { value: "featured", label: "Featured" },
+  { value: "price-asc", label: "Price: Low to High" },
+  { value: "price-desc", label: "Price: High to Low" },
+  { value: "margin", label: "Best Margin" },
+  { value: "rating", label: "Top Rated" },
+];
