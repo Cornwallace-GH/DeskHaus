@@ -1,19 +1,11 @@
-# DeskHaus
+# DeskHaus — Jekyll POC
 
-Premium home office gear e-commerce storefront.
-
-**Live site:** https://cornwallace-gh.github.io/DeskHaus/
-
-## Stack
-
-- **Jekyll** — static site generator (GitHub Pages native)
-- **Vanilla JS** — cart, checkout, product modal, reviews
-- **`_data/products.yml`** — single source of truth for all product data
+Premium home office gear storefront. Built with Jekyll for GitHub Pages as a proof of concept.
+Structured for straightforward migration to Shopify (see `_shopify_reference/SHOPIFY_MIGRATION.md`).
 
 ## Local Development
 
 ```bash
-gem install jekyll bundler
 bundle install
 bundle exec jekyll serve
 # → http://localhost:4000/DeskHaus/
@@ -23,32 +15,33 @@ bundle exec jekyll serve
 
 ```
 _data/
-  products.yml          ← All product data (name, price, specs, reviews, etc.)
+  products.yml          # Single source of truth for all product data
 _layouts/
-  default.html          ← HTML shell: nav, cart drawer, checkout, modals
-_shopify_reference/     ← React components preserved for Shopify migration
-  App.jsx
-  CartDrawer.jsx
-  CheckoutDrawer.jsx
-  ProductModal.jsx
-  context.jsx
-  products-data.js      ← JS equivalent of products.yml
+  default.html          # Main HTML shell (nav, drawers, footer)
+_shopify_reference/
+  SHOPIFY_MIGRATION.md  # Full migration guide to Shopify theme
+  *.jsx                 # React source files preserved for reference
 assets/
-  css/main.css          ← All styles
-  js/store.js           ← Cart, checkout, filters, product modal, reviews
-index.html              ← Main page (Jekyll + Liquid templates)
-_config.yml             ← Jekyll config
+  css/main.css          # All styles
+  js/store.js           # Cart, checkout, modal, search, filter logic
+index.html              # Page content (Liquid + HTML)
 ```
 
-## Adding / Editing Products
+## Stack
 
-Edit `_data/products.yml` — the page and JS both pull from it automatically.
+- **Jekyll 4.3** — static site generator, runs natively on GitHub Pages
+- **Liquid** — Shopify's own templating language (maps 1:1 on migration)
+- **Vanilla JS** — zero dependencies, full cart/checkout/modal/review functionality
+- **DM Serif Display + Inter** — Google Fonts
 
-## Shopify Migration Path
+## Live Site
 
-See `_shopify_reference/` for the full React component set built for Shopify:
+`https://cornwallace-gh.github.io/DeskHaus/`
 
-1. Replace `window.PRODUCTS_DATA` in `store.js` with a Shopify Storefront API fetch
-2. Replace the checkout drawer with a redirect to Shopify's native checkout
-3. Port `_layouts/default.html` to a Shopify Liquid theme layout
-4. Use the React components in `_shopify_reference/` as the headless frontend
+## Shopify Migration
+
+See `_shopify_reference/SHOPIFY_MIGRATION.md` for the complete migration guide,
+including file mapping, Liquid syntax differences, Storefront API integration,
+AJAX cart replacement, and metafield setup.
+
+Estimated migration time: ~1 day.
